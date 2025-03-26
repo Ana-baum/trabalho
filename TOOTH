@@ -1,0 +1,135 @@
+import java.util.Date;
+import java.util.List;
+
+// Classe Usuario
+class Usuario {
+    private String nome;
+    private String email;
+    private String senha;
+    private Date dataNascimento;
+
+    public Usuario(String nome, String email, String senha, Date dataNascimento) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void fazerLogin() {
+        System.out.println(nome + " fez login.");
+    }
+
+    public void atualizarPerfil() {
+        System.out.println("Perfil de " + nome + " atualizado.");
+    }
+
+    public void favoritarFuncionalidade() {
+        System.out.println("Funcionalidade favoritada por " + nome + ".");
+    }
+}
+
+// Classe Psicologo
+class Psicologo {
+    private String nome;
+    private String especialidade;
+    private List<String> disponibilidade;
+
+    public Psicologo(String nome, String especialidade, List<String> disponibilidade) {
+        this.nome = nome;
+        this.especialidade = especialidade;
+        this.disponibilidade = disponibilidade;
+    }
+
+    public void atenderUsuario() {
+        System.out.println(nome + " está atendendo um usuário.");
+    }
+
+    public void enviarMensagem() {
+        System.out.println("Mensagem enviada pelo psicólogo " + nome);
+    }
+}
+
+// Classe Sessao
+class Sessao {
+    private Usuario usuario;
+    private Psicologo psicologo;
+    private Date dataHora;
+
+    public Sessao(Usuario usuario, Psicologo psicologo, Date dataHora) {
+        this.usuario = usuario;
+        this.psicologo = psicologo;
+        this.dataHora = dataHora;
+    }
+
+    public void iniciarSessao() {
+        System.out.println("Sessão iniciada entre " + usuario + " e " + psicologo);
+    }
+
+    public void finalizarSessao() {
+        System.out.println("Sessão finalizada.");
+    }
+}
+
+// Classe Lembrete
+class Lembrete {
+    private String tipo;
+    private Date horario;
+
+    public Lembrete(String tipo, Date horario) {
+        this.tipo = tipo;
+        this.horario = horario;
+    }
+
+    public void enviarNotificacao() {
+        System.out.println("Notificação de lembrete enviada para " + tipo);
+    }
+}
+
+// Classe FraseMotivacional
+class FraseMotivacional {
+    private String texto;
+    private String autor;
+
+    public FraseMotivacional(String texto, String autor) {
+        this.texto = texto;
+        this.autor = autor;
+    }
+
+    public void exibirFrase() {
+        System.out.println("Frase: " + texto + " - " + autor);
+    }
+}
+
+// Classe Exercicio
+class Exercicio {
+    private String nome;
+    private String tipo;
+    private int duracao;
+
+    public Exercicio(String nome, String tipo, int duracao) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.duracao = duracao;
+    }
+
+    public void iniciarExercicio() {
+        System.out.println("Exercício " + nome + " iniciado.");
+    }
+}
+
+// Classe Meditacao
+class Meditacao {
+    private String titulo;
+    private int duracao;
+    private String guiaAudio;
+
+    public Meditacao(String titulo, int duracao, String guiaAudio) {
+        this.titulo = titulo;
+        this.duracao = duracao;
+        this.guiaAudio = guiaAudio;
+    }
+
+    public void iniciarMeditacao() {
+        System.out.println("Meditação " + titulo + " iniciada.");
+    }
+}
