@@ -1,0 +1,48 @@
+Cliente 
+    id_cli INT PRIMARY KEY
+    username VARCHAR(50) 
+    email VARCHAR(100) 
+    senha VARCHAR(100) 
+    nome VARCHAR(100)
+
+Cadastro 
+    id_cadastro INT PRIMARY KEY,
+    nome VARCHAR(100)
+    sobrenome VARCHAR(100)
+    email VARCHAR(100) 
+    senha VARCHAR(100) 
+    telefone VARCHAR(20)
+    data_nasc DATE
+    questionario TEXT
+
+pagamento
+    id_pagamento INT PRIMARY KEY,
+    id_cliente INT,
+    tipo_pagamento ('pix', 'credito', 'debito', 'boleto') VARCHAR(50)
+
+Terapia 
+    id_terapia INT PRIMARY KEY,
+    id_cliente INT
+    descricao TEXT
+
+Aplicativo 
+    id_app INT PRIMARY KEY,
+    id_cliente INT,
+    func_lembrete BOOLEAN 
+    func_exerc BOOLEAN 
+    func_terap BOOLEAN 
+    func_antivicio BOOLEAN
+    botao_ovv BOOLEAN 
+    frase_motiv TEXT,
+
+ Lembrete 
+    id_lembrete INT PRIMARY KEY,
+    id_app INT,
+    tipo ('terapia', 'beber_agua', 'tomar_remedio')  VARCHAR(30)
+
+Funcoes 
+    id_funcoes INT PRIMARY KEY,
+    exercicio_fisic TEXT,
+    frase_motiv TEXT,
+    terapia TEXT,
+    exercicio_resp TEXT
