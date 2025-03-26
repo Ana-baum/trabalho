@@ -1,0 +1,68 @@
+/* Lógico_1: */
+CREATE DATEBASE be_up
+CREATE TABLE terapia (
+);
+CREATE TABLE pagamento (
+credito DECIMAL,
+debito DECIMAL,
+pix DECIMAL,
+boleto DECIMAL
+);
+CREATE TABLE cadastro (
+data_nasc date,
+questionario text,
+telefone varchar(20),
+senha varchar(100),
+gmail varchar(100),
+nome varchar(100),
+sobrenome varchar(100),
+id_cadastro int PRIMARY KEY
+);
+CREATE TABLE cliente (
+nome varchar(50),
+senha varchar(100),
+email varchar(100),
+username varchar(100),
+id_cliente int PRIMARY KEY
+);
+CREATE TABLE aplicativo (
+);
+CREATE TABLE funcoes (
+exercicio_fisic text,
+frase_motiva text,
+terapia text,
+exercicio_resp text
+);
+CREATE TABLE lembrete (
+terapia varchar(30),
+beber_agua varchar(30),
+tomar_remedio varchar(30)
+);
+CREATE TABLE faz_terapia_pagamento_cadastro_cliente (
+fk_cliente_id_cliente int,
+fk_cadastro_id_cadastro int
+);
+CREATE TABLE possui (
+fk_cliente_id_cliente int,
+func_antivicio BOOLEAN,
+botao_cvv BOOLEAN,
+func_lembrete BOOLEAN,
+func_exercicio BOOLEAN,
+frase_motiv text,
+func_terap BOOLEAN
+);
+CREATE TABLE sugere (
+);
+CREATE TABLE envia (
+);
+ALTER TABLE faz_terapia_pagamento_cadastro_cliente ADD CONSTRAINT FK_faz_terapia_pagamento_cadastro_cliente_1
+FOREIGN KEY (fk_cliente_id_cliente)
+REFERENCES cliente (id_cliente)
+ON DELETE NO ACTION;
+ALTER TABLE faz_terapia_pagamento_cadastro_cliente ADD CONSTRAINT FK_faz_terapia_pagamento_cadastro_cliente_2
+FOREIGN KEY (fk_cadastro_id_cadastro)
+REFERENCES cadastro (id_cadastro);
+ALTER TABLE possui ADD CONSTRAINT FK_possui_1
+FOREIGN KEY (fk_cliente_id_cliente)
+REFERENCES cliente (id_cliente)
+ON DELETE SET NULL;
